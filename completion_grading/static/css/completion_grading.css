@@ -1,1 +1,9 @@
 /* CSS for XBlockCompletionGrading */
+
+#score {
+    margin-top: 20px;
+}
+
+#error-message {
+    color: red;
+}
