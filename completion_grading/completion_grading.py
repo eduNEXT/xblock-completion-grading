@@ -72,16 +72,16 @@ class XblockCompletionGrading(StudioEditableXBlockMixin, XBlock):
         return frag
 
     @staticmethod
-    def workbench_scenarios():
+    def workbench_scenarios() -> list[tuple[str, str]]:
         """Create canned scenario for display in the workbench."""
         return [
             (
-                "XblockCompletionGrading",
+                "XBlockCompletionGrading",
                 """<completion_grading/>
              """,
             ),
             (
-                "Multiple XblockCompletionGrading",
+                "Multiple XBlockCompletionGrading",
                 """<vertical_demo>
                 <completion_grading/>
                 <completion_grading/>
@@ -103,8 +103,7 @@ class XblockCompletionGrading(StudioEditableXBlockMixin, XBlock):
             return None
         text_js = "public/js/translations/{locale_code}/text.js"
         lang_code = locale_code.split("-")[0]
-        for code in (locale_code, lang_code, "en"):
-            loader = ResourceLoader(__name__)
+        for code in (translation.to_locale(locale_code), lang_code, "en"):
             if pkg_resources.resource_exists(
                 loader.module_name, text_js.format(locale_code=code)
             ):

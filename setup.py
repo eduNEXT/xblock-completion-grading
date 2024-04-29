@@ -174,7 +174,7 @@ setup(
     ],
     entry_points={
         'xblock.v1': [
-            'completion_grading = completion_grading:XblockCompletionGrading',
+            'completion_grading = completion_grading:XBlockCompletionGrading',
         ]
     },
     package_data=package_data("completion_grading", ["static", "public", "translations"]),
