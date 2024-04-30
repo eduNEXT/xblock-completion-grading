@@ -14,16 +14,8 @@ from xblock.fields import Float, Integer, Scope, String
 from xblock.utils.resources import ResourceLoader
 from xblock.utils.studio_editable import StudioEditableXBlockMixin
 
-from completion_grading.edxapp_wrapper.submissions import (
-    create_submission,
-    get_score,
-    set_score,
-)
-from completion_grading.utils import (
-    GradingMethod,
-    get_anonymous_user_id,
-    get_course_sequences,
-)
+from completion_grading.edxapp_wrapper.submissions import create_submission, get_score, set_score
+from completion_grading.utils import GradingMethod, _, get_anonymous_user_id, get_course_sequences
 
 log = logging.getLogger(__name__)
 loader = ResourceLoader(__name__)
@@ -267,7 +259,7 @@ class XBlockCompletionGrading(
         }
 
     @XBlock.json_handler
-    def calculate_grade(self, request: dict, _suffix: str = "") -> dict:
+    def calculate_grade(self, _: dict, _suffix: str = "") -> dict:
         """
         Calculate the grade for the student.
 
@@ -314,7 +306,7 @@ class XBlockCompletionGrading(
             return MAX_SCORE
 
         if self.grading_method == GradingMethod.MINIMUM_COMPLETION.name:
-            return int(unit_completions >= self.unit_completions)
+            return MAX_SCORE
         elif self.grading_method == GradingMethod.AVERAGE_COMPLETION.name:
             return unit_completions / self.unit_completions
         return MIN_SCORE

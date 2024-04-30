@@ -23,8 +23,7 @@ def get_course_sequences(course_key):
     course = modulestore().get_course(course_key, depth=0)
     for section in course.get_children():
         for subsection in section.get_children():
-            for unit in subsection.get_children():
-                yield unit
+            yield from subsection.get_children()
 
 
 def _(text):
