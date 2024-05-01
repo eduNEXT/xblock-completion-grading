@@ -13,6 +13,7 @@ from xblock.core import XBlock
 from xblock.fields import Float, Integer, Scope, String
 from xblock.utils.resources import ResourceLoader
 from xblock.utils.studio_editable import StudioEditableXBlockMixin
+from xblock.utils.studio_editable import loader as studio_loader
 
 from completion_grading.edxapp_wrapper.submissions import create_submission, get_score, set_score
 from completion_grading.utils import GradingMethod, _, get_anonymous_user_id, get_course_sequences
@@ -84,7 +85,7 @@ class XBlockCompletionGrading(
     )
 
     unit_completions = Integer(
-        display_name=_("Number of completed units"),
+        display_name=_("Number of Completed Units"),
         help=_("Number of units that need to be completed to get a grade."),
         scope=Scope.settings,
         default=1,
@@ -199,6 +200,34 @@ class XBlockCompletionGrading(
         return loader.render_django_template(
             template_path, context, i18n_service=self.runtime.service(self, "i18n")
         )
+
+    def studio_view(self, context):
+        """
+        Render a form for editing this XBlock.
+        """
+        fragment = Fragment()
+        context = {"fields": []}
+
+        # Build a list of all the fields that can be edited:
+        for field_name in self.editable_fields:
+            field = self.fields[field_name]  # pylint: disable=unsubscriptable-object
+            assert field.scope in (Scope.content, Scope.settings), (
+                "Only Scope.content or Scope.settings fields can be used with "
+                "StudioEditableXBlockMixin. Other scopes are for user-specific data and are "
+                "not generally created/configured by content authors in Studio."
+            )
+            field_info = self._make_field_info(field_name, field)
+            if field_info is not None:
+                if field_info["type"] == "string":
+                    field_info["default"] = self.ugettext(field_info.get("default"))
+                    field_info["value"] = self.ugettext(field_info.get("value"))
+                context["fields"].append(field_info)
+
+        fragment.content = studio_loader.render_django_template("templates/studio_edit.html", context)
+        fragment.add_javascript(studio_loader.load_unicode("public/studio_edit.js"))
+        fragment.initialize_js("StudioEditableXBlockMixin")
+
+        return fragment
 
     def student_view(self, _context: dict = None) -> Fragment:
         """

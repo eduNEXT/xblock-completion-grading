@@ -1,34 +1,171 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# edX translation file.
+# Copyright (C) 2024 EdX
+# This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
+# EdX Team <info@edx.org>, 2024.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-25 16:40-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: 0.1a\n"
+"Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
+"POT-Creation-Date: 2023-06-13 08:00+0000\n"
+"PO-Revision-Date: 2023-06-13 09:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: completion_grading/completion_grading.py:24
+#: completion_grading.py:43
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre a Mostrar"
 
-#: completion_grading/completion_grading.py:25
+#: completion_grading.py:44
 msgid "The display name for this component."
 msgstr "El nombre para mostrar de este componente."
 
-#: completion_grading/completion_grading.py:27
+#: completion_grading.py:46
 msgid "Course Completion Grading"
-msgstr "Calificación por nivel de finalización del curso"
+msgstr "Calificación por Nivel de Finalización del Curso"
 
-#: completion_grading/completion_grading.py:119
+#: completion_grading.py:50
+msgid "Grading Method"
+msgstr "Método de Calificación"
+
+#: completion_grading.py:52
+msgid ""
+"Completion grading method for the component. There are two options: minimum "
+"completion and average completion. Minimum completion grades learners based "
+"on the minimum number of completed units, if the learner has completed the "
+"minimum number of units, they will get a grade of 1, otherwise 0. Average "
+"completion grades learners based on the average number of completed units, "
+"if the learner has completed a number of units greater or equal to the "
+"number of completed units required to get a grade, they will get a grade of "
+"1, otherwise the grade will be the number of completed units divided by the "
+"number of completed units required to get a grade configured in the "
+"component.If the value is not set, the component will use the minimum "
+"completion method.The unit completions don't include the completion of the "
+"unit that contains the component."
+msgstr ""
+" Método de calificación para el componente. Hay dos opciones: "
+"finalización mínima y finalización media. La finalización mínima califica a los estudiantes en función "
+"al número mínimo de unidades completadas, si el alumno ha completado el "
+"número mínimo de unidades, obtendrá una calificación de 1; en caso contrario, 0. La finalización media "
+"califica a los estudiantes en función del número medio de unidades completadas; si el alumno ha completado "
+"un número de unidades superior o igual al número de unidades completadas necesario para obtener una "
+"calificación, obtendrá una calificación de 1; en caso contrario, la calificación será el número de unidades "
+"completadas dividido por el número de unidades completadas necesario para obtener una calificación configurado en el componente. "
+"Si el valor no está configurado, el componente utilizará el método de finalización mínima. Las unidades completadas "
+"no incluyen la finalización de la unidad que contiene el componente."
+
+#: completion_grading.py:75
+msgid "Maximum Attempts"
+msgstr "Número Máximo de Intentos"
+
+#: completion_grading.py:77
+msgid ""
+"Defines the number of times a student can attempt to calculate the grade. If"
+" the value is not set, infinite attempts are allowed."
+msgstr ""
+"Define el número de veces que un estudiante puede intentar calcular la "
+"calificación. Si el valor no está establecido, se permiten intentos "
+"indefinidos."
+
+#: completion_grading.py:87
+msgid "Number of Completed Units"
+msgstr "Número de Unidades Completadas"
+
+#: completion_grading.py:88
+msgid "Number of units that need to be completed to get a grade."
+msgstr "Número de unidades que deben completarse para obtener una calificación."
+
+#: completion_grading.py:94
+msgid "Problem Weight"
+msgstr "Peso del Problema"
+
+#: completion_grading.py:96
+msgid ""
+"Defines the number of points this problem is worth. If the value is not set,"
+" the problem is worth 1 point."
+msgstr "Define el número de puntos que vale este problema. Si el valor no está "
+"establecido, el problema vale un punto."
+
+#: completion_grading.py:104
+msgid "Instructions Text"
+msgstr "Texto de las Instrucciones"
+
+#: completion_grading.py:105
+msgid "Instructions to be displayed to the student."
+msgstr "Define el texto de las instrucciones que se mostrará al estudiante."
+
+#: completion_grading.py:107
+msgid ""
+"Please press the button to calculate your grade according to the number of "
+"completed units in the course."
+msgstr "Por favor, presiona el botón para calcular su nota según el número de "
+"unidades completadas en el curso."
+
+#: completion_grading.py:114
+msgid "Button Text"
+msgstr "Texto del Botón"
+
+#: completion_grading.py:115
+msgid "Text to be displayed on the button."
+msgstr "Define el texto que se mostrará en el botón."
+
+#: completion_grading.py:116
+msgid "Calculate Grade"
+msgstr "Calcular calificación"
+
+#: completion_grading.py:121
+msgid "Number of attempts taken by the student to calculate the grade."
+msgstr "Número de intentos tomados por el estudiante para calcular la calificación."
+
+#: completion_grading.py:127
+msgid "Raw score"
+msgstr "Puntuación Bruta"
+
+#: completion_grading.py:128
+msgid "The raw score for the assignment."
+msgstr "La puntuación bruta para la tarea."
+
+#: completion_grading.py:134
+msgid "Submission UUID"
+msgstr "UUID de la Entrega"
+
+#: completion_grading.py:135
+msgid "The submission UUID for the assignment."
+msgstr "El UUID de la entrega para la tarea."
+
+#: completion_grading.py:278
+msgid "You have reached the maximum number of attempts."
+msgstr "Has alcanzado el número máximo de intentos."
+
+#: completion_grading.py:293
+msgid "Grade calculated successfully."
+msgstr ""
+
+#: completion_grading.py:390
 msgid "Dummy"
 msgstr ""
+
+#: static/html/completion_grading.html:6
+msgid "You have made"
+msgstr "Has hecho"
+
+#: static/html/completion_grading.html:6
+msgid "attempts to calculate the grading."
+msgstr "intentos para calcular la calificación."
+
+#: static/html/completion_grading.html:11
+msgid "Your score is:"
+msgstr "Tu puntuación es:"
+
+#: utils.py:63
+msgid "Minimum number of completed units"
+msgstr "Número mínimo de unidades completadas"
+
+#: utils.py:64
+msgid "Average Number of Completed Units"
+msgstr "Número promedio de unidades terminadas"

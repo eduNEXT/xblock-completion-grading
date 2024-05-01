@@ -60,5 +60,5 @@ class GradingMethod(Enum):
     - AVERAGE_COMPLETION: Learners are graded based on the average number of completed units
     """
 
-    MINIMUM_COMPLETION = _("Minimum number of completed units")
-    AVERAGE_COMPLETION = _("Average number of completed units")
+    MINIMUM_COMPLETION = _("Minimum Number of Completed Units")
+    AVERAGE_COMPLETION = _("Average Number of Completed Units")

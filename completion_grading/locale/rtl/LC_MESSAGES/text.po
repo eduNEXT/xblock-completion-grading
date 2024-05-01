@@ -30,5 +30,145 @@ msgid "Course Completion Grading"
 msgstr "Ȼønɹsǝ Ȼøɯdlǝʇᴉøn Ǥɹɐdᴉnƃ"
 
 #: completion_grading.py
+msgid "Grading Method"
+msgstr "Ǥɹɐdᴉnƃ Mǝʇɥød"
+
+#: completion_grading.py
+msgid ""
+"Completion grading method for the component. There are two options: minimum "
+"completion and average completion. Minimum completion grades learners based "
+"on the minimum number of completed units, if the learner has completed the "
+"minimum number of units, they will get a grade of 1, otherwise 0. Average "
+"completion grades learners based on the average number of completed units, "
+"if the learner has completed a number of units greater or equal to the "
+"number of completed units required to get a grade, they will get a grade of "
+"1, otherwise the grade will be the number of completed units divided by the "
+"number of completed units required to get a grade configured in the "
+"component.If the value is not set, the component will use the minimum "
+"completion method.The unit completions don't include the completion of the "
+"unit that contains the component."
+msgstr ""
+"Ȼøɯdlǝʇᴉøn ƃɹɐdᴉnƃ ɯǝʇɥød ɟøɹ ʇɥǝ ɔøɯdønǝnʇ. Ŧɥǝɹǝ ɐɹǝ ʇʍø ødʇᴉøns: ɯᴉnᴉɯnɯ "
+"ɔøɯdlǝʇᴉøn ɐnd ɐʌǝɹɐƃǝ ɔøɯdlǝʇᴉøn. Mᴉnᴉɯnɯ ɔøɯdlǝʇᴉøn ƃɹɐdǝs lǝɐɹnǝɹs bɐsǝd "
+"øn ʇɥǝ ɯᴉnᴉɯnɯ nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs, ᴉɟ ʇɥǝ lǝɐɹnǝɹ ɥɐs ɔøɯdlǝʇǝd ʇɥǝ "
+"ɯᴉnᴉɯnɯ nnɯbǝɹ øɟ nnᴉʇs, ʇɥǝʎ ʍᴉll ƃǝʇ ɐ ƃɹɐdǝ øɟ 1, øʇɥǝɹʍᴉsǝ 0. Ⱥʌǝɹɐƃǝ "
+"ɔøɯdlǝʇᴉøn ƃɹɐdǝs lǝɐɹnǝɹs bɐsǝd øn ʇɥǝ ɐʌǝɹɐƃǝ nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs, "
+"ᴉɟ ʇɥǝ lǝɐɹnǝɹ ɥɐs ɔøɯdlǝʇǝd ɐ nnɯbǝɹ øɟ nnᴉʇs ƃɹǝɐʇǝɹ øɹ ǝbnɐl ʇø ʇɥǝ "
+"nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs ɹǝbnᴉɹǝd ʇø ƃǝʇ ɐ ƃɹɐdǝ, ʇɥǝʎ ʍᴉll ƃǝʇ ɐ ƃɹɐdǝ øɟ "
+"1, øʇɥǝɹʍᴉsǝ ʇɥǝ ƃɹɐdǝ ʍᴉll bǝ ʇɥǝ nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs dᴉʌᴉdǝd bʎ ʇɥǝ "
+"nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs ɹǝbnᴉɹǝd ʇø ƃǝʇ ɐ ƃɹɐdǝ ɔønɟᴉƃnɹǝd ᴉn ʇɥǝ "
+"ɔøɯdønǝnʇ.Ɨɟ ʇɥǝ ʌɐlnǝ ᴉs nøʇ sǝʇ, ʇɥǝ ɔøɯdønǝnʇ ʍᴉll nsǝ ʇɥǝ ɯᴉnᴉɯnɯ "
+"ɔøɯdlǝʇᴉøn ɯǝʇɥød.Ŧɥǝ nnᴉʇ ɔøɯdlǝʇᴉøns døn'ʇ ᴉnɔlndǝ ʇɥǝ ɔøɯdlǝʇᴉøn øɟ ʇɥǝ "
+"nnᴉʇ ʇɥɐʇ ɔønʇɐᴉns ʇɥǝ ɔøɯdønǝnʇ."
+
+#: completion_grading.py
+msgid "Maximum Attempts"
+msgstr "Mɐxᴉɯnɯ Ⱥʇʇǝɯdʇs"
+
+#: completion_grading.py
+msgid ""
+"Defines the number of times a student can attempt to calculate the grade. If"
+" the value is not set, infinite attempts are allowed."
+msgstr ""
+"Đǝɟᴉnǝs ʇɥǝ nnɯbǝɹ øɟ ʇᴉɯǝs ɐ sʇndǝnʇ ɔɐn ɐʇʇǝɯdʇ ʇø ɔɐlɔnlɐʇǝ ʇɥǝ ƃɹɐdǝ. Ɨɟ"
+" ʇɥǝ ʌɐlnǝ ᴉs nøʇ sǝʇ, ᴉnɟᴉnᴉʇǝ ɐʇʇǝɯdʇs ɐɹǝ ɐlløʍǝd."
+
+#: completion_grading.py
+msgid "Number of completed units"
+msgstr "Nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs"
+
+#: completion_grading.py
+msgid "Number of units that need to be completed to get a grade."
+msgstr "Nnɯbǝɹ øɟ nnᴉʇs ʇɥɐʇ nǝǝd ʇø bǝ ɔøɯdlǝʇǝd ʇø ƃǝʇ ɐ ƃɹɐdǝ."
+
+#: completion_grading.py
+msgid "Problem Weight"
+msgstr "Ᵽɹøblǝɯ Wǝᴉƃɥʇ"
+
+#: completion_grading.py
+msgid ""
+"Defines the number of points this problem is worth. If the value is not set,"
+" the problem is worth 1 point."
+msgstr ""
+"Đǝɟᴉnǝs ʇɥǝ nnɯbǝɹ øɟ døᴉnʇs ʇɥᴉs dɹøblǝɯ ᴉs ʍøɹʇɥ. Ɨɟ ʇɥǝ ʌɐlnǝ ᴉs nøʇ sǝʇ,"
+" ʇɥǝ dɹøblǝɯ ᴉs ʍøɹʇɥ 1 døᴉnʇ."
+
+#: completion_grading.py
+msgid "Instructions Text"
+msgstr "Ɨnsʇɹnɔʇᴉøns Ŧǝxʇ"
+
+#: completion_grading.py
+msgid "Instructions to be displayed to the student."
+msgstr "Ɨnsʇɹnɔʇᴉøns ʇø bǝ dᴉsdlɐʎǝd ʇø ʇɥǝ sʇndǝnʇ."
+
+#: completion_grading.py
+msgid ""
+"Please press the button to calculate your grade according to the number of "
+"completed units in the course."
+msgstr ""
+"Ᵽlǝɐsǝ dɹǝss ʇɥǝ bnʇʇøn ʇø ɔɐlɔnlɐʇǝ ʎønɹ ƃɹɐdǝ ɐɔɔøɹdᴉnƃ ʇø ʇɥǝ nnɯbǝɹ øɟ "
+"ɔøɯdlǝʇǝd nnᴉʇs ᴉn ʇɥǝ ɔønɹsǝ."
+
+#: completion_grading.py
+msgid "Button Text"
+msgstr "Ƀnʇʇøn Ŧǝxʇ"
+
+#: completion_grading.py
+msgid "Text to be displayed on the button."
+msgstr "Ŧǝxʇ ʇø bǝ dᴉsdlɐʎǝd øn ʇɥǝ bnʇʇøn."
+
+#: completion_grading.py
+msgid "Calculate Grade"
+msgstr "Ȼɐlɔnlɐʇǝ Ǥɹɐdǝ"
+
+#: completion_grading.py
+msgid "Number of attempts taken by the student to calculate the grade."
+msgstr "Nnɯbǝɹ øɟ ɐʇʇǝɯdʇs ʇɐʞǝn bʎ ʇɥǝ sʇndǝnʇ ʇø ɔɐlɔnlɐʇǝ ʇɥǝ ƃɹɐdǝ."
+
+#: completion_grading.py
+msgid "Raw score"
+msgstr "Ɍɐʍ sɔøɹǝ"
+
+#: completion_grading.py
+msgid "The raw score for the assignment."
+msgstr "Ŧɥǝ ɹɐʍ sɔøɹǝ ɟøɹ ʇɥǝ ɐssᴉƃnɯǝnʇ."
+
+#: completion_grading.py
+msgid "Submission UUID"
+msgstr "Snbɯᴉssᴉøn ɄɄƗĐ"
+
+#: completion_grading.py
+msgid "The submission UUID for the assignment."
+msgstr "Ŧɥǝ snbɯᴉssᴉøn ɄɄƗĐ ɟøɹ ʇɥǝ ɐssᴉƃnɯǝnʇ."
+
+#: completion_grading.py
+msgid "You have reached the maximum number of attempts."
+msgstr "Ɏøn ɥɐʌǝ ɹǝɐɔɥǝd ʇɥǝ ɯɐxᴉɯnɯ nnɯbǝɹ øɟ ɐʇʇǝɯdʇs."
+
+#: completion_grading.py
+msgid "Grade calculated successfully."
+msgstr "Ǥɹɐdǝ ɔɐlɔnlɐʇǝd snɔɔǝssɟnllʎ."
+
+#: completion_grading.py
 msgid "Dummy"
 msgstr "Đnɯɯʎ"
+
+#: static/html/completion_grading.html
+msgid "You have made"
+msgstr "Ɏøn ɥɐʌǝ ɯɐdǝ"
+
+#: static/html/completion_grading.html
+msgid "attempts to calculate the grading."
+msgstr "ɐʇʇǝɯdʇs ʇø ɔɐlɔnlɐʇǝ ʇɥǝ ƃɹɐdᴉnƃ."
+
+#: static/html/completion_grading.html
+msgid "Your score is:"
+msgstr "Ɏønɹ sɔøɹǝ ᴉs:"
+
+#: utils.py
+msgid "Minimum number of completed units"
+msgstr "Mᴉnᴉɯnɯ nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs"
+
+#: utils.py
+msgid "Average Number of Completed Units"
+msgstr "Ⱥʌǝɹɐƃǝ nnɯbǝɹ øɟ ɔøɯdlǝʇǝd nnᴉʇs"

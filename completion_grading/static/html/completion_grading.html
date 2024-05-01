@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <div class="completion-grading-block">
-    <p>{{ block.instructions_text }}</p>
+    <p>{% trans block.instructions_text %}</p>
     {% if block.max_attempts %}
         <p>{% trans "You have made" %} ({{ block.attempts}}/{{ block.max_attempts }}) {% trans "attempts to calculate the grading." %}</p>
     {% endif %}
