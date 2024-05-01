@@ -56,7 +56,7 @@ class XBlockCompletionGrading(
             "number of units, they will get a grade of 1, otherwise 0. "
             "Average completion grades learners based on the average number "
             "of completed units, if the learner has completed a number of units "
-            "grater or equal to the number of completed units required to get a grade, "
+            "greater or equal to the number of completed units required to get a grade, "
             "they will get a grade of 1, otherwise the grade will be the "
             "number of completed units divided by the number of completed "
             "units required to get a grade configured in the component."
