@@ -306,7 +306,7 @@ class XBlockCompletionGrading(
             return MAX_SCORE
 
         if self.grading_method == GradingMethod.MINIMUM_COMPLETION.name:
-            return int(unit_completions >= self.unit_completions)
+            return MIN_SCORE
         elif self.grading_method == GradingMethod.AVERAGE_COMPLETION.name:
             return unit_completions / self.unit_completions
         return MIN_SCORE
