@@ -18,7 +18,13 @@ def _(text):
 
 def get_course_sequences(course_key):
     """
-    Extracts a list of 'subsections' from a course.
+    Extract a list of 'subsections' from a course.
+
+    Args:
+        course_key (CourseKey): Course key.
+
+    Returns:
+        iterable: List of subsections.
     """
     course = modulestore().get_course(course_key, depth=0)
     for section in course.get_children():

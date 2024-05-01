@@ -259,7 +259,7 @@ class XBlockCompletionGrading(
         }
 
     @XBlock.json_handler
-    def calculate_grade(self, _: dict, _suffix: str = "") -> dict:
+    def calculate_grade(self, _data: dict, _suffix: str = "") -> dict:
         """
         Calculate the grade for the student.
 
@@ -306,7 +306,7 @@ class XBlockCompletionGrading(
             return MAX_SCORE
 
         if self.grading_method == GradingMethod.MINIMUM_COMPLETION.name:
-            return MAX_SCORE
+            return int(unit_completions >= self.unit_completions)
         elif self.grading_method == GradingMethod.AVERAGE_COMPLETION.name:
             return unit_completions / self.unit_completions
         return MIN_SCORE
@@ -331,9 +331,7 @@ class XBlockCompletionGrading(
         """
         submission_data = create_submission(
             self.get_student_item_dict(),
-            {
-                "completion": 1,
-            },
+            {},
         )
         self.submission_uuid = submission_data.get("uuid")
 
