@@ -1,5 +1,5 @@
 """
-Comments module generalized definitions.
+Modulestore module generalized definitions.
 """
 
 from importlib import import_module

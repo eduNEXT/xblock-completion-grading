@@ -1,5 +1,5 @@
 """
-Comments module generalized definitions.
+Submissions module generalized definitions.
 """
 
 from importlib import import_module
