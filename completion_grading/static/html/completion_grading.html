@@ -1,1 +1,13 @@
-<div class="completion_grading_block"></div>
+{% load i18n %}
+
+<div class="completion-grading-block">
+    <p>{{ block.instructions_text }}</p>
+    {% if block.max_attempts %}
+        <p>{% trans "You have made" %} ({{ block.attempts}}/{{ block.max_attempts }}) {% trans "attempts to calculate the grading." %}</p>
+    {% endif %}
+    {% if not block.max_attempts or block.attempts < block.max_attempts %}
+        <button id="calculate-grade">{% trans block.button_text %}</button>
+    {% endif %}
+    <p id="score">{% trans "Your score is:" %} {{ weighted_score }} / {{ block.weight }}</p>
+    <p id="error-message"></p>
+</div>

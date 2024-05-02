@@ -16,6 +16,16 @@ Unreleased
 
 *
 
+0.2.0 – 2024-05-02
+**********************************************
+
+Added
+=====
+
+* Add handlers to calculate grade based on the units completed by the
+students and the components configurations.
+
+
 0.1.0 – 2024-04-24
 **********************************************
 
