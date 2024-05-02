@@ -36,10 +36,10 @@ msgstr ""
 #: completion_grading.py:53
 msgid ""
 "Completion grading method for the component. There are two options: minimum "
-"completion and average completion. Minimum completion grades learners based "
-"on the minimum number of completed units, if the learner has completed the "
-"minimum number of units, they will get a grade of 1, otherwise 0. Average "
-"completion grades learners based on the average number of completed units, "
+"completion and weighted completion. Minimum completion grades learners based"
+" on the minimum number of completed units, if the learner has completed the "
+"minimum number of units, they will get a grade of 1, otherwise 0. Weighted "
+"completion grades learners based on the weighted number of completed units, "
 "if the learner has completed a number of units greater or equal to the "
 "number of completed units required to get a grade, they will get a grade of "
 "1, otherwise the grade will be the number of completed units divided by the "
@@ -123,15 +123,15 @@ msgstr ""
 msgid "The submission UUID for the assignment."
 msgstr ""
 
-#: completion_grading.py:307
+#: completion_grading.py:311
 msgid "You have reached the maximum number of attempts."
 msgstr ""
 
-#: completion_grading.py:322
+#: completion_grading.py:326
 msgid "Grade calculated successfully."
 msgstr ""
 
-#: completion_grading.py:419
+#: completion_grading.py:423
 msgid "Dummy"
 msgstr ""
 
@@ -152,5 +152,5 @@ msgid "Minimum Number of Completed Units"
 msgstr ""
 
 #: utils.py:64
-msgid "Average Number of Completed Units"
+msgid "Weighted Number of Completed Units"
 msgstr ""

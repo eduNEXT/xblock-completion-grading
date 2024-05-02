@@ -51,11 +51,11 @@ class XBlockCompletionGrading(
         display_name=_("Grading Method"),
         help=_(
             "Completion grading method for the component. There are two "
-            "options: minimum completion and average completion. Minimum "
+            "options: minimum completion and weighted completion. Minimum "
             "completion grades learners based on the minimum number of "
             "completed units, if the learner has completed the minimum "
             "number of units, they will get a grade of 1, otherwise 0. "
-            "Average completion grades learners based on the average number "
+            "Weighted completion grades learners based on the weighted number "
             "of completed units, if the learner has completed a number of units "
             "greater or equal to the number of completed units required to get a grade, "
             "they will get a grade of 1, otherwise the grade will be the "
@@ -221,6 +221,9 @@ class XBlockCompletionGrading(
                 if field_info["type"] == "string":
                     field_info["default"] = self.ugettext(field_info.get("default"))
                     field_info["value"] = self.ugettext(field_info.get("value"))
+                    if "values" in field_info:
+                        for value in field_info["values"]:
+                            value["display_name"] = self.ugettext(value.get("display_name"))
                 context["fields"].append(field_info)
 
         fragment.content = studio_loader.render_django_template("templates/studio_edit.html", context)
@@ -336,7 +339,7 @@ class XBlockCompletionGrading(
 
         if self.grading_method == GradingMethod.MINIMUM_COMPLETION.name:
             return MIN_SCORE
-        elif self.grading_method == GradingMethod.AVERAGE_COMPLETION.name:
+        elif self.grading_method == GradingMethod.WEIGHTED_COMPLETION.name:
             return unit_completions / self.unit_completions
         return MIN_SCORE
 

@@ -36,10 +36,10 @@ msgstr "Método de Calificación"
 #: completion_grading.py:52
 msgid ""
 "Completion grading method for the component. There are two options: minimum "
-"completion and average completion. Minimum completion grades learners based "
+"completion and weighted completion. Minimum completion grades learners based "
 "on the minimum number of completed units, if the learner has completed the "
-"minimum number of units, they will get a grade of 1, otherwise 0. Average "
-"completion grades learners based on the average number of completed units, "
+"minimum number of units, they will get a grade of 1, otherwise 0. Weighted "
+"completion grades learners based on the weighted number of completed units, "
 "if the learner has completed a number of units greater or equal to the "
 "number of completed units required to get a grade, they will get a grade of "
 "1, otherwise the grade will be the number of completed units divided by the "
@@ -163,9 +163,9 @@ msgid "Your score is:"
 msgstr "Tu puntuación es:"
 
 #: utils.py:63
-msgid "Minimum number of completed units"
-msgstr "Número mínimo de unidades completadas"
+msgid "Minimum Number of Completed Units"
+msgstr "Número Mínimo de Unidades Completadas"
 
 #: utils.py:64
-msgid "Average Number of Completed Units"
-msgstr "Número promedio de unidades terminadas"
+msgid "Weighted Number of Completed Units"
+msgstr "Número Ponderado de Unidades Terminadas"
