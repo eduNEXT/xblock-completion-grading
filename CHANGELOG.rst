@@ -24,7 +24,7 @@ Added
 
 * Add handlers to calculate grade based on the units completed by the
 students and the components configurations.
-
+* Add necessary support for Spanish translations.
 
 0.1.0 – 2024-04-24
 **********************************************
