@@ -5,6 +5,7 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
+import celery
 import pkg_resources
 from django.utils import translation
 from web_fragments.fragment import Fragment
@@ -15,8 +16,19 @@ from xblock.utils.resources import ResourceLoader
 from xblock.utils.studio_editable import StudioEditableXBlockMixin
 from xblock.utils.studio_editable import loader as studio_loader
 
-from completion_grading.edxapp_wrapper.submissions import create_submission, get_score, set_score
-from completion_grading.utils import GradingMethod, _, get_anonymous_user_id, get_course_sequences
+from completion_grading.edxapp_wrapper.submissions import (
+    create_submission,
+    get_score,
+    set_score,
+)
+from completion_grading.tasks import get_user_completions_by_verticals_task
+from completion_grading.utils import (
+    GradingMethod,
+    _,
+    get_anonymous_user_id,
+    get_course_sequences,
+    get_username,
+)
 
 log = logging.getLogger(__name__)
 loader = ResourceLoader(__name__)
@@ -138,6 +150,13 @@ class XBlockCompletionGrading(
         scope=Scope.user_state,
     )
 
+    task_id = String(
+        display_name=_("Task ID"),
+        help=_("The task ID for the unit completions calculation task."),
+        default=None,
+        scope=Scope.user_state,
+    )
+
     editable_fields = [
         "display_name",
         "grading_method",
@@ -223,10 +242,14 @@ class XBlockCompletionGrading(
                     field_info["value"] = self.ugettext(field_info.get("value"))
                     if "values" in field_info:
                         for value in field_info["values"]:
-                            value["display_name"] = self.ugettext(value.get("display_name"))
+                            value["display_name"] = self.ugettext(
+                                value.get("display_name")
+                            )
                 context["fields"].append(field_info)
 
-        fragment.content = studio_loader.render_django_template("templates/studio_edit.html", context)
+        fragment.content = studio_loader.render_django_template(
+            "templates/studio_edit.html", context
+        )
         fragment.add_javascript(studio_loader.load_unicode("public/studio_edit.js"))
         fragment.initialize_js("StudioEditableXBlockMixin")
 
@@ -310,7 +333,44 @@ class XBlockCompletionGrading(
                 "message": _("You have reached the maximum number of attempts."),
             }
 
-        self.raw_score = self.get_raw_score()
+        if not self.task_id:
+            completions_task_result = (
+                get_user_completions_by_verticals_task.apply_async(
+                    kwargs={
+                        "username": get_username(self.current_user),
+                        "course_key_string": str(self.block_course_id),
+                        "usage_key": str(self.block_id),
+                    }
+                )
+            )
+            self.task_id = completions_task_result.id
+            return {
+                "success": False,
+                "message": _(
+                    "Grade calculations for your latest completion state are in progress."
+                    "Try refreshing the page in a few seconds."
+                ),
+            }
+
+        async_result = celery.current_app.AsyncResult(id=self.task_id)
+        if async_result.status in ["PENDING", "STARTED"]:
+            return {
+                "success": False,
+                "message": _(
+                    "Grade calculations for your latest completion state are in progress."
+                    "Try refreshing the page in a few seconds."
+                ),
+            }
+
+        self.task_id = None
+        if async_result.status != "SUCCESS":
+            return {
+                "success": False,
+                "message": _("Completion grade calculation failed. Try again later."),
+            }
+
+        unit_completions = async_result.result
+        self.raw_score = self.get_raw_score(unit_completions)
 
         if not self.submission_uuid:
             self.create_submission()
@@ -325,15 +385,13 @@ class XBlockCompletionGrading(
             "message": _("Grade calculated successfully."),
         }
 
-    def get_raw_score(self) -> int:
+    def get_raw_score(self, unit_completions) -> int:
         """
         Get the grade for the current user based on the grading method and number of interventions.
 
         Returns:
             int: The grade for the current user.
         """
-        unit_completions = self.get_unit_completions()
-
         if unit_completions >= self.unit_completions:
             return MAX_SCORE
 
@@ -342,20 +400,6 @@ class XBlockCompletionGrading(
         elif self.grading_method == GradingMethod.WEIGHTED_COMPLETION.name:
             return unit_completions / self.unit_completions
         return MIN_SCORE
-
-    def get_unit_completions(self):
-        """
-        Get the number of completed units for the current user.
-        """
-        completed_units = 0
-        completion_service = self.runtime.service(self, "completion")
-        for unit in get_course_sequences(self.block_course_id):
-            if (
-                self not in unit.get_children()
-                and completion_service.vertical_is_complete(unit)
-            ):
-                completed_units += 1
-        return completed_units
 
     def create_submission(self) -> None:
         """

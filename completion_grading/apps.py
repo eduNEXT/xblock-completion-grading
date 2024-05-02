@@ -26,3 +26,9 @@ class CompletionGradingConfig(AppConfig):
             },
         },
     }
+
+    def ready(self):
+        """
+        Import the completion grading XBlock.
+        """
+        from completion_grading import tasks
