@@ -10,7 +10,14 @@
   const django = globals.django || (globals.django = {});
 
   
-  django.pluralidx = function(count) { return (count == 1) ? 0 : 1; };
+  django.pluralidx = function(n) {
+    const v = (n != 1);
+    if (typeof v === 'boolean') {
+      return v ? 1 : 0;
+    } else {
+      return v;
+    }
+  };
   
 
   /* gettext library */
@@ -18,9 +25,34 @@
   django.catalog = django.catalog || {};
   
   const newcatalog = {
-    "Course Completion Grading": "Calificaci\u00f3n por nivel de finalizaci\u00f3n del curso",
-    "Display Name": "Nombre a mostrar",
-    "The display name for this component.": "El nombre para mostrar de este componente."
+    "Button Text": "Texto del Bot\u00f3n",
+    "Calculate Grade": "Calcular calificaci\u00f3n",
+    "Completion grading method for the component. There are two options: minimum completion and weighted completion. Minimum completion grades learners based on the minimum number of completed units, if the learner has completed the minimum number of units, they will get a grade of 1, otherwise 0. Weighted completion grades learners based on the weighted number of completed units, if the learner has completed a number of units greater or equal to the number of completed units required to get a grade, they will get a grade of 1, otherwise the grade will be the number of completed units divided by the number of completed units required to get a grade configured in the component.If the value is not set, the component will use the minimum completion method.The unit completions don't include the completion of the unit that contains the component.": " M\u00e9todo de calificaci\u00f3n para el componente. Hay dos opciones: finalizaci\u00f3n m\u00ednima y finalizaci\u00f3n media. La finalizaci\u00f3n m\u00ednima califica a los estudiantes en funci\u00f3n al n\u00famero m\u00ednimo de unidades completadas, si el alumno ha completado el n\u00famero m\u00ednimo de unidades, obtendr\u00e1 una calificaci\u00f3n de 1; en caso contrario, 0. La finalizaci\u00f3n media califica a los estudiantes en funci\u00f3n del n\u00famero medio de unidades completadas; si el alumno ha completado un n\u00famero de unidades superior o igual al n\u00famero de unidades completadas necesario para obtener una calificaci\u00f3n, obtendr\u00e1 una calificaci\u00f3n de 1; en caso contrario, la calificaci\u00f3n ser\u00e1 el n\u00famero de unidades completadas dividido por el n\u00famero de unidades completadas necesario para obtener una calificaci\u00f3n configurado en el componente. Si el valor no est\u00e1 configurado, el componente utilizar\u00e1 el m\u00e9todo de finalizaci\u00f3n m\u00ednima. Las unidades completadas no incluyen la finalizaci\u00f3n de la unidad que contiene el componente.",
+    "Course Completion Grading": "Calificaci\u00f3n por Nivel de Finalizaci\u00f3n del Curso",
+    "Defines the number of points this problem is worth. If the value is not set, the problem is worth 10 point.": "Define el n\u00famero de puntos que vale este problema. Si el valor no est\u00e1 establecido, el problema vale 10 puntos.",
+    "Defines the number of times a student can attempt to calculate the grade. If the value is not set, infinite attempts are allowed.": "Define el n\u00famero de veces que un estudiante puede intentar calcular la calificaci\u00f3n. Si el valor no est\u00e1 establecido, se permiten intentos indefinidos.",
+    "Display Name": "Nombre a Mostrar",
+    "Grading Method": "M\u00e9todo de Calificaci\u00f3n",
+    "Instructions Text": "Texto de las Instrucciones",
+    "Instructions to be displayed to the student.": "Define el texto de las instrucciones que se mostrar\u00e1 al estudiante.",
+    "Maximum Attempts": "N\u00famero M\u00e1ximo de Intentos",
+    "Minimum Number of Completed Units": "N\u00famero M\u00ednimo de Unidades Completadas",
+    "Number of Completed Units": "N\u00famero de Unidades Completadas",
+    "Number of attempts taken by the student to calculate the grade.": "N\u00famero de intentos tomados por el estudiante para calcular la calificaci\u00f3n.",
+    "Number of units that need to be completed to get a grade.": "N\u00famero de unidades que deben completarse para obtener una calificaci\u00f3n.",
+    "Please press the button to calculate your grade according to the number of completed units in the course.": "Por favor, presiona el bot\u00f3n para calcular su nota seg\u00fan el n\u00famero de unidades completadas en el curso.",
+    "Problem Weight": "Peso del Problema",
+    "Raw score": "Puntuaci\u00f3n Bruta",
+    "Submission UUID": "UUID de la Entrega",
+    "Text to be displayed on the button.": "Define el texto que se mostrar\u00e1 en el bot\u00f3n.",
+    "The display name for this component.": "El nombre para mostrar de este componente.",
+    "The raw score for the assignment.": "La puntuaci\u00f3n bruta para la tarea.",
+    "The submission UUID for the assignment.": "El UUID de la entrega para la tarea.",
+    "Weighted Number of Completed Units": "N\u00famero Ponderado de Unidades Terminadas",
+    "You have made": "Has hecho",
+    "You have reached the maximum number of attempts.": "Has alcanzado el n\u00famero m\u00e1ximo de intentos.",
+    "Your score is:": "Tu puntuaci\u00f3n es:",
+    "attempts to calculate the grading.": "intentos para calcular la calificaci\u00f3n."
   };
   for (const key in newcatalog) {
     django.catalog[key] = newcatalog[key];

@@ -102,8 +102,8 @@ class TestXBlockCompletionGrading(TestCase):
         self.assertEqual(result.json, expected_result)
 
     @data(
-        (GradingMethod.AVERAGE_COMPLETION.name, 10, 5 / 10),
-        (GradingMethod.AVERAGE_COMPLETION.name, 5, 5 / 5),
+        (GradingMethod.WEIGHTED_COMPLETION.name, 10, 5 / 10),
+        (GradingMethod.WEIGHTED_COMPLETION.name, 5, 5 / 5),
         (GradingMethod.MINIMUM_COMPLETION.name, 10, 0),
         (GradingMethod.MINIMUM_COMPLETION.name, 5, 1),
     )

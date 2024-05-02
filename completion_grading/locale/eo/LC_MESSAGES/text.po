@@ -32,5 +32,160 @@ msgid "Course Completion Grading"
 msgstr "Çöürsé Çömplétïön Grädïng Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
 #: completion_grading.py
+msgid "Grading Method"
+msgstr "Grädïng Méthöd Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
+#: completion_grading.py
+msgid ""
+"Completion grading method for the component. There are two options: minimum "
+"completion and weighted completion. Minimum completion grades learners based "
+"on the minimum number of completed units, if the learner has completed the "
+"minimum number of units, they will get a grade of 1, otherwise 0. Weighted "
+"completion grades learners based on the weighted number of completed units, "
+"if the learner has completed a number of units greater or equal to the "
+"number of completed units required to get a grade, they will get a grade of "
+"1, otherwise the grade will be the number of completed units divided by the "
+"number of completed units required to get a grade configured in the "
+"component.If the value is not set, the component will use the minimum "
+"completion method.The unit completions don't include the completion of the "
+"unit that contains the component."
+msgstr ""
+"Çömplétïön grädïng méthöd för thé çömpönént. Théré äré twö öptïöns: mïnïmüm "
+"çömplétïön änd ävérägé çömplétïön. Mïnïmüm çömplétïön grädés léärnérs ßäséd "
+"ön thé mïnïmüm nümßér öf çömplétéd ünïts, ïf thé léärnér häs çömplétéd thé "
+"mïnïmüm nümßér öf ünïts, théý wïll gét ä grädé öf 1, öthérwïsé 0. Àvérägé "
+"çömplétïön grädés léärnérs ßäséd ön thé ävérägé nümßér öf çömplétéd ünïts, "
+"ïf thé léärnér häs çömplétéd ä nümßér öf ünïts gréätér ör éqüäl tö thé "
+"nümßér öf çömplétéd ünïts réqüïréd tö gét ä grädé, théý wïll gét ä grädé öf "
+"1, öthérwïsé thé grädé wïll ßé thé nümßér öf çömplétéd ünïts dïvïdéd ßý thé "
+"nümßér öf çömplétéd ünïts réqüïréd tö gét ä grädé çönfïgüréd ïn thé "
+"çömpönént.Ìf thé välüé ïs nöt sét, thé çömpönént wïll üsé thé mïnïmüm "
+"çömplétïön méthöd.Thé ünït çömplétïöns dön't ïnçlüdé thé çömplétïön öf thé "
+"ünït thät çöntäïns thé çömpönént.#"
+
+#: completion_grading.py
+msgid "Maximum Attempts"
+msgstr "Mäxïmüm Àttémpts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: completion_grading.py
+msgid ""
+"Defines the number of times a student can attempt to calculate the grade. If"
+" the value is not set, infinite attempts are allowed."
+msgstr ""
+"Défïnés thé nümßér öf tïmés ä stüdént çän ättémpt tö çälçüläté thé grädé. Ìf"
+" thé välüé ïs nöt sét, ïnfïnïté ättémpts äré ällöwéd. Ⱡ'σ#"
+
+#: completion_grading.py
+msgid "Number of completed units"
+msgstr "Nümßér öf çömplétéd ünïts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
+
+#: completion_grading.py
+msgid "Number of units that need to be completed to get a grade."
+msgstr ""
+"Nümßér öf ünïts thät nééd tö ßé çömplétéd tö gét ä grädé. Ⱡ'σяєм ιρѕυм ∂σłσя"
+" ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: completion_grading.py
+msgid "Problem Weight"
+msgstr "Prößlém Wéïght Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
+#: completion_grading.py
+msgid ""
+"Defines the number of points this problem is worth. If the value is not set,"
+" the problem is worth 1 point."
+msgstr ""
+"Défïnés thé nümßér öf pöïnts thïs prößlém ïs wörth. Ìf thé välüé ïs nöt sét,"
+" thé prößlém ïs wörth 1 pöïnt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт #"
+
+#: completion_grading.py
+msgid "Instructions Text"
+msgstr "Ìnstrüçtïöns Téxt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: completion_grading.py
+msgid "Instructions to be displayed to the student."
+msgstr ""
+"Ìnstrüçtïöns tö ßé dïspläýéd tö thé stüdént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя #"
+
+#: completion_grading.py
+msgid ""
+"Please press the button to calculate your grade according to the number of "
+"completed units in the course."
+msgstr ""
+"Pléäsé préss thé ßüttön tö çälçüläté ýöür grädé äççördïng tö thé nümßér öf "
+"çömplétéd ünïts ïn thé çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт #"
+
+#: completion_grading.py
+msgid "Button Text"
+msgstr "Büttön Téxt Ⱡ'σяєм ιρѕυм ∂σłσя #"
+
+#: completion_grading.py
+msgid "Text to be displayed on the button."
+msgstr ""
+"Téxt tö ßé dïspläýéd ön thé ßüttön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: completion_grading.py
+msgid "Calculate Grade"
+msgstr "Çälçüläté Grädé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
+#: completion_grading.py
+msgid "Number of attempts taken by the student to calculate the grade."
+msgstr ""
+"Nümßér öf ättémpts täkén ßý thé stüdént tö çälçüläté thé grädé. Ⱡ'σяєм ιρѕυм"
+" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: completion_grading.py
+msgid "Raw score"
+msgstr "Räw sçöré Ⱡ'σяєм ιρѕυм ∂σł#"
+
+#: completion_grading.py
+msgid "The raw score for the assignment."
+msgstr ""
+"Thé räw sçöré för thé ässïgnmént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
+
+#: completion_grading.py
+msgid "Submission UUID"
+msgstr "Süßmïssïön ÛÛÌD Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
+#: completion_grading.py
+msgid "The submission UUID for the assignment."
+msgstr ""
+"Thé süßmïssïön ÛÛÌD för thé ässïgnmént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя#"
+
+#: completion_grading.py
+msgid "You have reached the maximum number of attempts."
+msgstr ""
+"Ýöü hävé réäçhéd thé mäxïmüm nümßér öf ättémpts. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: completion_grading.py
+msgid "Grade calculated successfully."
+msgstr "Grädé çälçülätéd süççéssfüllý. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
+
+#: completion_grading.py
 msgid "Dummy"
 msgstr "Dümmý Ⱡ'σяєм ιρѕ#"
+
+#: static/html/completion_grading.html
+msgid "You have made"
+msgstr "Ýöü hävé mädé Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+
+#: static/html/completion_grading.html
+msgid "attempts to calculate the grading."
+msgstr ""
+"ättémpts tö çälçüläté thé grädïng. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: static/html/completion_grading.html
+msgid "Your score is:"
+msgstr "Ýöür sçöré ïs: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
+#: utils.py
+msgid "Minimum Number of Completed Units"
+msgstr ""
+"Mïnïmüm nümßér öf çömplétéd ünïts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
+
+#: utils.py
+msgid "Weighted Number of Completed Units"
+msgstr ""
+"Àvérägé nümßér öf çömplétéd ünïts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"

@@ -3,8 +3,8 @@ function XBlockCompletionGrading(runtime, element) {
     const calculateGrade = runtime.handlerUrl(element, "calculate_grade");
 
     let gettext;
-    if ("CompletionGradingI18N" in window || "gettext" in window) {
-      gettext = window.CompletionGradingI18N?.gettext || window.gettext;
+    if ("CompletionGradingI18n" in window || "gettext" in window) {
+      gettext = window.CompletionGradingI18n?.gettext || window.gettext;
     }
 
     if (typeof gettext == "undefined") {

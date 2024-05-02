@@ -57,8 +57,8 @@ class GradingMethod(Enum):
     Enum for completion grading method.
 
     - MINIMUM_COMPLETION: Learners are graded based on the minimum number of completed units
-    - AVERAGE_COMPLETION: Learners are graded based on the average number of completed units
+    - WEIGHTED_COMPLETION: Learners are graded based on the weighted number of completed units
     """
 
-    MINIMUM_COMPLETION = _("Minimum number of completed units")
-    AVERAGE_COMPLETION = _("Average number of completed units")
+    MINIMUM_COMPLETION = _("Minimum Number of Completed Units")
+    WEIGHTED_COMPLETION = _("Weighted Number of Completed Units")

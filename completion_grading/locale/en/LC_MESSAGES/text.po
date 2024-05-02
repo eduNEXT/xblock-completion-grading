@@ -17,18 +17,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: completion_grading.py:24
+#: completion_grading.py:44
 msgid "Display Name"
 msgstr ""
 
-#: completion_grading.py:25
+#: completion_grading.py:45
 msgid "The display name for this component."
 msgstr ""
 
-#: completion_grading.py:27
+#: completion_grading.py:47
 msgid "Course Completion Grading"
 msgstr ""
 
-#: completion_grading.py:119
+#: completion_grading.py:51
+msgid "Grading Method"
+msgstr ""
+
+#: completion_grading.py:53
+msgid ""
+"Completion grading method for the component. There are two options: minimum "
+"completion and weighted completion. Minimum completion grades learners based"
+" on the minimum number of completed units, if the learner has completed the "
+"minimum number of units, they will get a grade of 1, otherwise 0. Weighted "
+"completion grades learners based on the weighted number of completed units, "
+"if the learner has completed a number of units greater or equal to the "
+"number of completed units required to get a grade, they will get a grade of "
+"1, otherwise the grade will be the number of completed units divided by the "
+"number of completed units required to get a grade configured in the "
+"component.If the value is not set, the component will use the minimum "
+"completion method.The unit completions don't include the completion of the "
+"unit that contains the component."
+msgstr ""
+
+#: completion_grading.py:76
+msgid "Maximum Attempts"
+msgstr ""
+
+#: completion_grading.py:78
+msgid ""
+"Defines the number of times a student can attempt to calculate the grade. If"
+" the value is not set, infinite attempts are allowed."
+msgstr ""
+
+#: completion_grading.py:88
+msgid "Number of Completed Units"
+msgstr ""
+
+#: completion_grading.py:89
+msgid "Number of units that need to be completed to get a grade."
+msgstr ""
+
+#: completion_grading.py:95
+msgid "Problem Weight"
+msgstr ""
+
+#: completion_grading.py:97
+msgid ""
+"Defines the number of points this problem is worth. If the value is not set,"
+" the problem is worth 10 points."
+msgstr ""
+
+#: completion_grading.py:105
+msgid "Instructions Text"
+msgstr ""
+
+#: completion_grading.py:106
+msgid "Instructions to be displayed to the student."
+msgstr ""
+
+#: completion_grading.py:108
+msgid ""
+"Please press the button to calculate your grade according to the number of "
+"completed units in the course."
+msgstr ""
+
+#: completion_grading.py:115
+msgid "Button Text"
+msgstr ""
+
+#: completion_grading.py:116
+msgid "Text to be displayed on the button."
+msgstr ""
+
+#: completion_grading.py:117
+msgid "Calculate Grade"
+msgstr ""
+
+#: completion_grading.py:122
+msgid "Number of attempts taken by the student to calculate the grade."
+msgstr ""
+
+#: completion_grading.py:128
+msgid "Raw score"
+msgstr ""
+
+#: completion_grading.py:129
+msgid "The raw score for the assignment."
+msgstr ""
+
+#: completion_grading.py:135
+msgid "Submission UUID"
+msgstr ""
+
+#: completion_grading.py:136
+msgid "The submission UUID for the assignment."
+msgstr ""
+
+#: completion_grading.py:310
+msgid "You have reached the maximum number of attempts."
+msgstr ""
+
+#: completion_grading.py:325
+msgid "Grade calculated successfully."
+msgstr ""
+
+#: completion_grading.py:422
 msgid "Dummy"
+msgstr ""
+
+#: static/html/completion_grading.html:6
+msgid "You have made"
+msgstr ""
+
+#: static/html/completion_grading.html:6
+msgid "attempts to calculate the grading."
+msgstr ""
+
+#: static/html/completion_grading.html:11
+msgid "Your score is:"
+msgstr ""
+
+#: utils.py:63
+msgid "Minimum Number of Completed Units"
+msgstr ""
+
+#: utils.py:64
+msgid "Weighted Number of Completed Units"
 msgstr ""
