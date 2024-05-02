@@ -94,9 +94,9 @@ class XBlockCompletionGrading(
         display_name=_("Problem Weight"),
         help=_(
             "Defines the number of points this problem is worth. If "
-            "the value is not set, the problem is worth 1 point."
+            "the value is not set, the problem is worth 10 points."
         ),
-        default=1,
+        default=10,
         scope=Scope.settings,
     )
 
