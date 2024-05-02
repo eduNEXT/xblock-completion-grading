@@ -87,9 +87,9 @@ msgstr "Peso del Problema"
 #: completion_grading.py:96
 msgid ""
 "Defines the number of points this problem is worth. If the value is not set,"
-" the problem is worth 1 point."
+" the problem is worth 10 point."
 msgstr "Define el número de puntos que vale este problema. Si el valor no está "
-"establecido, el problema vale un punto."
+"establecido, el problema vale 10 puntos."
 
 #: completion_grading.py:104
 msgid "Instructions Text"

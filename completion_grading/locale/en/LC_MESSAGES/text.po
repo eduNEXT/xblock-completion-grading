@@ -74,7 +74,7 @@ msgstr ""
 #: completion_grading.py:97
 msgid ""
 "Defines the number of points this problem is worth. If the value is not set,"
-" the problem is worth 1 point."
+" the problem is worth 10 points."
 msgstr ""
 
 #: completion_grading.py:105
@@ -123,15 +123,15 @@ msgstr ""
 msgid "The submission UUID for the assignment."
 msgstr ""
 
-#: completion_grading.py:311
+#: completion_grading.py:310
 msgid "You have reached the maximum number of attempts."
 msgstr ""
 
-#: completion_grading.py:326
+#: completion_grading.py:325
 msgid "Grade calculated successfully."
 msgstr ""
 
-#: completion_grading.py:423
+#: completion_grading.py:422
 msgid "Dummy"
 msgstr ""
 
