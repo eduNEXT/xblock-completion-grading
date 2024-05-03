@@ -347,8 +347,8 @@ class XBlockCompletionGrading(
             return {
                 "success": False,
                 "message": _(
-                    "Grade calculations for your latest completion state are in progress."
-                    "Try refreshing the page in a few seconds."
+                    "Grade calculations for your latest completion state are in progress. "
+                    "Try again in a few seconds."
                 ),
             }
 
@@ -357,8 +357,8 @@ class XBlockCompletionGrading(
             return {
                 "success": False,
                 "message": _(
-                    "Grade calculations for your latest completion state are in progress."
-                    "Try refreshing the page in a few seconds."
+                    "Grade calculations for your latest completion state are in progress. "
+                    "Try again in a few seconds."
                 ),
             }
 

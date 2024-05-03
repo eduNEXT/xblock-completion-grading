@@ -19,3 +19,9 @@ def plugin_settings(settings):
         "COMPLETION_GRADING_MODULESTORE_BACKEND",
         settings.COMPLETION_GRADING_MODULESTORE_BACKEND,
     )
+    settings.COMPLETION_SERVICE_BACKEND = getattr(
+        settings, "ENV_TOKENS", {}
+    ).get(
+        "COMPLETION_SERVICE_BACKEND",
+        settings.COMPLETION_SERVICE_BACKEND,
+    )

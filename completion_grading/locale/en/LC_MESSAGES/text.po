@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: completion_grading.py:44
+#: completion_grading.py:56
 msgid "Display Name"
 msgstr ""
 
-#: completion_grading.py:45
+#: completion_grading.py:57
 msgid "The display name for this component."
 msgstr ""
 
-#: completion_grading.py:47
+#: completion_grading.py:59
 msgid "Course Completion Grading"
 msgstr ""
 
-#: completion_grading.py:51
+#: completion_grading.py:63
 msgid "Grading Method"
 msgstr ""
 
-#: completion_grading.py:53
+#: completion_grading.py:65
 msgid ""
 "Completion grading method for the component. There are two options: minimum "
 "completion and weighted completion. Minimum completion grades learners based"
@@ -49,89 +49,107 @@ msgid ""
 "unit that contains the component."
 msgstr ""
 
-#: completion_grading.py:76
+#: completion_grading.py:88
 msgid "Maximum Attempts"
 msgstr ""
 
-#: completion_grading.py:78
+#: completion_grading.py:90
 msgid ""
 "Defines the number of times a student can attempt to calculate the grade. If"
 " the value is not set, infinite attempts are allowed."
 msgstr ""
 
-#: completion_grading.py:88
+#: completion_grading.py:100
 msgid "Number of Completed Units"
 msgstr ""
 
-#: completion_grading.py:89
+#: completion_grading.py:101
 msgid "Number of units that need to be completed to get a grade."
 msgstr ""
 
-#: completion_grading.py:95
+#: completion_grading.py:107
 msgid "Problem Weight"
 msgstr ""
 
-#: completion_grading.py:97
+#: completion_grading.py:109
 msgid ""
 "Defines the number of points this problem is worth. If the value is not set,"
 " the problem is worth 10 points."
 msgstr ""
 
-#: completion_grading.py:105
+#: completion_grading.py:117
 msgid "Instructions Text"
 msgstr ""
 
-#: completion_grading.py:106
+#: completion_grading.py:118
 msgid "Instructions to be displayed to the student."
 msgstr ""
 
-#: completion_grading.py:108
+#: completion_grading.py:120
 msgid ""
 "Please press the button to calculate your grade according to the number of "
 "completed units in the course."
 msgstr ""
 
-#: completion_grading.py:115
+#: completion_grading.py:127
 msgid "Button Text"
 msgstr ""
 
-#: completion_grading.py:116
+#: completion_grading.py:128
 msgid "Text to be displayed on the button."
 msgstr ""
 
-#: completion_grading.py:117
+#: completion_grading.py:129
 msgid "Calculate Grade"
 msgstr ""
 
-#: completion_grading.py:122
+#: completion_grading.py:134
 msgid "Number of attempts taken by the student to calculate the grade."
 msgstr ""
 
-#: completion_grading.py:128
+#: completion_grading.py:140
 msgid "Raw score"
 msgstr ""
 
-#: completion_grading.py:129
+#: completion_grading.py:141
 msgid "The raw score for the assignment."
 msgstr ""
 
-#: completion_grading.py:135
+#: completion_grading.py:147
 msgid "Submission UUID"
 msgstr ""
 
-#: completion_grading.py:136
+#: completion_grading.py:148
 msgid "The submission UUID for the assignment."
 msgstr ""
 
-#: completion_grading.py:310
+#: completion_grading.py:154
+msgid "Task ID"
+msgstr ""
+
+#: completion_grading.py:155
+msgid "The task ID for the unit completions calculation task."
+msgstr ""
+
+#: completion_grading.py:333
 msgid "You have reached the maximum number of attempts."
 msgstr ""
 
-#: completion_grading.py:325
+#: completion_grading.py:350 completion_grading.py:360
+msgid ""
+"Grade calculations for your latest completion state are in progress. Try "
+"again in a few seconds."
+msgstr ""
+
+#: completion_grading.py:369
+msgid "Completion grade calculation failed. Try again later."
+msgstr ""
+
+#: completion_grading.py:385
 msgid "Grade calculated successfully."
 msgstr ""
 
-#: completion_grading.py:422
+#: completion_grading.py:466
 msgid "Dummy"
 msgstr ""
 
@@ -147,10 +165,10 @@ msgstr ""
 msgid "Your score is:"
 msgstr ""
 
-#: utils.py:63
+#: utils.py:84
 msgid "Minimum Number of Completed Units"
 msgstr ""
 
-#: utils.py:64
+#: utils.py:85
 msgid "Weighted Number of Completed Units"
 msgstr ""

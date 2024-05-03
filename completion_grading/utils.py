@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 from opaque_keys.edx.keys import CourseKey, UsageKey
 
 from completion_grading.edxapp_wrapper.modulestore import modulestore
+from completion_grading.edxapp_wrapper.completion import init_completion_service
 
 ATTR_KEY_ANONYMOUS_USER_ID = "edx-platform.anonymous_user_id"
 ATTR_KEY_USERNAME = "edx-platform.username"
@@ -88,16 +89,13 @@ def get_user_completions_by_verticals(username, course_key_string, usage_key):
     """
     Grade a submission with completions API.
     """
-    # Import here to avoid apps not ready error
-    from completion.services import CompletionService
-
     User = get_user_model()
     user = User.objects.get(username=username)
 
     usage_key = UsageKey.from_string(usage_key)
     course_key = CourseKey.from_string(course_key_string)
 
-    completion_service = CompletionService(user, course_key)
+    completion_service = init_completion_service(user, course_key)
     completed_units = 0
 
     for unit in get_course_sequences(course_key):
