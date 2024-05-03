@@ -1,10 +1,13 @@
+"""
+Celery tasks for completion grading.
+"""
+
 from celery import shared_task
-from edx_django_utils.monitoring import set_code_owner_attribute
+
 from completion_grading.utils import get_user_completions_by_verticals
 
 
 @shared_task
-@set_code_owner_attribute
 def get_user_completions_by_verticals_task(username, course_key_string, usage_key):
     """
     Grade a submission with completions API.

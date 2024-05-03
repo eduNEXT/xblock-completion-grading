@@ -2,19 +2,16 @@
 Utilities for completion grading.
 """
 
-import logging
 from enum import Enum
 
 from django.contrib.auth import get_user_model
 from opaque_keys.edx.keys import CourseKey, UsageKey
 
-from completion_grading.edxapp_wrapper.modulestore import modulestore
 from completion_grading.edxapp_wrapper.completion import init_completion_service
+from completion_grading.edxapp_wrapper.modulestore import modulestore
 
 ATTR_KEY_ANONYMOUS_USER_ID = "edx-platform.anonymous_user_id"
 ATTR_KEY_USERNAME = "edx-platform.username"
-
-log = logging.getLogger(__name__)
 
 
 def _(text):
@@ -34,17 +31,10 @@ def get_course_sequences(course_key):
     Returns:
         iterable: List of subsections.
     """
-    course = modulestore().get_course(course_key,depth=0)
+    course = modulestore().get_course(course_key, depth=0)
     for section in course.get_children():
         for subsection in section.get_children():
             yield from subsection.get_children()
-
-
-def _(text):
-    """
-    Make '_' a no-op so we can scrape strings.
-    """
-    return text
 
 
 def get_anonymous_user_id(user) -> str:
@@ -87,7 +77,7 @@ class GradingMethod(Enum):
 
 def get_user_completions_by_verticals(username, course_key_string, usage_key):
     """
-    Grade a submission with completions API.
+    Get the number of completed units for a user.
     """
     User = get_user_model()
     user = User.objects.get(username=username)

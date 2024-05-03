@@ -31,4 +31,4 @@ class CompletionGradingConfig(AppConfig):
         """
         Import the completion grading XBlock.
         """
-        from completion_grading import tasks
+        from completion_grading import tasks  # pylint: disable=unused-import, import-outside-toplevel

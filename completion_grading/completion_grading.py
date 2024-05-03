@@ -16,19 +16,9 @@ from xblock.utils.resources import ResourceLoader
 from xblock.utils.studio_editable import StudioEditableXBlockMixin
 from xblock.utils.studio_editable import loader as studio_loader
 
-from completion_grading.edxapp_wrapper.submissions import (
-    create_submission,
-    get_score,
-    set_score,
-)
+from completion_grading.edxapp_wrapper.submissions import create_submission, get_score, set_score
 from completion_grading.tasks import get_user_completions_by_verticals_task
-from completion_grading.utils import (
-    GradingMethod,
-    _,
-    get_anonymous_user_id,
-    get_course_sequences,
-    get_username,
-)
+from completion_grading.utils import GradingMethod, _, get_anonymous_user_id, get_username
 
 log = logging.getLogger(__name__)
 loader = ResourceLoader(__name__)
@@ -220,7 +210,7 @@ class XBlockCompletionGrading(
             template_path, context, i18n_service=self.runtime.service(self, "i18n")
         )
 
-    def studio_view(self, context):
+    def studio_view(self, context):  # pragma: no cover
         """
         Render a form for editing this XBlock.
         """
@@ -369,8 +359,7 @@ class XBlockCompletionGrading(
                 "message": _("Completion grade calculation failed. Try again later."),
             }
 
-        unit_completions = async_result.result
-        self.raw_score = self.get_raw_score(unit_completions)
+        self.raw_score = self.get_raw_score(async_result.result)
 
         if not self.submission_uuid:
             self.create_submission()
@@ -390,7 +379,7 @@ class XBlockCompletionGrading(
         Get the grade for the current user based on the grading method and number of interventions.
 
         Returns:
-            int: The grade for the current user.
+            int: number of completed units.
         """
         if unit_completions >= self.unit_completions:
             return MAX_SCORE
