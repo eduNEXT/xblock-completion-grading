@@ -62,8 +62,8 @@ class XBlockCompletionGrading(
             "greater or equal to the number of completed units required to get a grade, "
             "they will get a grade of 1, otherwise the grade will be the "
             "number of completed units divided by the number of completed "
-            "units required to get a grade configured in the component."
-            "If the value is not set, the component will use the minimum completion method."
+            "units required to get a grade configured in the component. "
+            "If the value is not set, the component will use the minimum completion method. "
             "The unit completions don't include the completion of the unit that contains the component."
         ),
         values=[
