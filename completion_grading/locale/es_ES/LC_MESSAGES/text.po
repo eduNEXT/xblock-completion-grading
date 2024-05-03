@@ -55,7 +55,7 @@ msgstr ""
 "califica a los estudiantes en función del número medio de unidades completadas; si el alumno ha completado "
 "un número de unidades superior o igual al número de unidades completadas necesario para obtener una "
 "calificación, obtendrá una calificación de 1; en caso contrario, la calificación será el número de unidades "
-"completadas dividido por el número de unidades completadas necesario para obtener una calificación configurado en el componente. "
+"completadas dividido por el número de unidades completadas necesario para obtener una calificación configurada en el componente. "
 "Si el valor no está configurado, el componente utilizará el método de finalización mínima. Las unidades completadas "
 "no incluyen la finalización de la unidad que contiene el componente."
 
