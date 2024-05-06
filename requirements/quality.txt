@@ -4,6 +4,10 @@
 #
 #    make upgrade
 #
+amqp==5.2.0
+    # via
+    #   -r requirements/test.txt
+    #   kombu
 appdirs==1.4.4
     # via
     #   -r requirements/test.txt
@@ -20,24 +24,32 @@ astroid==3.1.0
     # via
     #   pylint
     #   pylint-celery
-backports-zoneinfo==0.2.1 ; python_version < "3.9"
+backports-zoneinfo[tzdata]==0.2.1 ; python_version < "3.9"
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
+    #   celery
     #   django
+    #   kombu
+billiard==4.2.0
+    # via
+    #   -r requirements/test.txt
+    #   celery
 binaryornot==0.4.4
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-boto3==1.34.95
+boto3==1.34.97
     # via
     #   -r requirements/test.txt
     #   fs-s3fs
-botocore==1.34.95
+botocore==1.34.97
     # via
     #   -r requirements/test.txt
     #   boto3
     #   s3transfer
+celery==5.4.0
+    # via -r requirements/test.txt
 certifi==2024.2.2
     # via
     #   -r requirements/test.txt
@@ -53,12 +65,28 @@ charset-normalizer==3.3.2
 click==8.1.7
     # via
     #   -r requirements/test.txt
+    #   celery
+    #   click-didyoumean
     #   click-log
+    #   click-plugins
+    #   click-repl
     #   code-annotations
     #   cookiecutter
     #   edx-lint
+click-didyoumean==0.3.1
+    # via
+    #   -r requirements/test.txt
+    #   celery
 click-log==0.4.0
     # via edx-lint
+click-plugins==1.1.1
+    # via
+    #   -r requirements/test.txt
+    #   celery
+click-repl==0.3.0
+    # via
+    #   -r requirements/test.txt
+    #   celery
 code-annotations==1.8.0
     # via
     #   -r requirements/test.txt
@@ -90,10 +118,16 @@ django-appconf==1.0.6
     #   django-statici18n
 django-statici18n==2.5.0
     # via -r requirements/test.txt
+dnspython==2.6.1
+    # via
+    #   -r requirements/test.txt
+    #   pymongo
 edx-i18n-tools==1.6.0
     # via -r requirements/test.txt
 edx-lint==5.3.6
     # via -r requirements/quality.in
+edx-opaque-keys==2.9.0
+    # via -r requirements/test.txt
 exceptiongroup==1.2.1
     # via
     #   -r requirements/test.txt
@@ -131,6 +165,10 @@ jmespath==1.0.1
     #   -r requirements/test.txt
     #   boto3
     #   botocore
+kombu==5.3.7
+    # via
+    #   -r requirements/test.txt
+    #   celery
 lazy==1.6
     # via
     #   -r requirements/test.txt
@@ -191,6 +229,10 @@ polib==1.2.0
     # via
     #   -r requirements/test.txt
     #   edx-i18n-tools
+prompt-toolkit==3.0.43
+    # via
+    #   -r requirements/test.txt
+    #   click-repl
 pycodestyle==2.11.1
     # via -r requirements/quality.in
 pydocstyle==6.3.0
@@ -213,6 +255,10 @@ pylint-plugin-utils==0.8.2
     # via
     #   pylint-celery
     #   pylint-django
+pymongo==4.4.0
+    # via
+    #   -r requirements/test.txt
+    #   edx-opaque-keys
 pypng==0.20220715.0
     # via
     #   -r requirements/test.txt
@@ -231,6 +277,7 @@ python-dateutil==2.9.0.post0
     #   -r requirements/test.txt
     #   arrow
     #   botocore
+    #   celery
     #   xblock
 python-slugify==8.0.4
     # via
@@ -284,6 +331,7 @@ stevedore==5.2.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
+    #   edx-opaque-keys
 text-unidecode==1.3
     # via
     #   -r requirements/test.txt
@@ -305,13 +353,30 @@ typing-extensions==4.11.0
     #   -r requirements/test.txt
     #   asgiref
     #   astroid
+    #   edx-opaque-keys
+    #   kombu
     #   pylint
     #   rich
+tzdata==2024.1
+    # via
+    #   -r requirements/test.txt
+    #   backports-zoneinfo
+    #   celery
 urllib3==1.26.18
     # via
     #   -r requirements/test.txt
     #   botocore
     #   requests
+vine==5.1.0
+    # via
+    #   -r requirements/test.txt
+    #   amqp
+    #   celery
+    #   kombu
+wcwidth==0.2.13
+    # via
+    #   -r requirements/test.txt
+    #   prompt-toolkit
 web-fragments==2.2.0
     # via
     #   -r requirements/test.txt
