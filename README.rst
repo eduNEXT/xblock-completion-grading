@@ -63,10 +63,12 @@ The **Completion Grading** component has the following settings:
   - **Minimum Completion**: grades learners based on the minimum number of
     completed units, if the learner has completed the minimum number of units,
     they will get a grade of 1, otherwise 0.
-  - **Weighted Completion**: The learner will receive a grade based on
-    the weighted number of participations in the completion forum. The grade
-    will be calculated as: (learner_participations / number of
-    participations). The grade is rounded to the nearest integer.
+  - **Weighted Completion**: grades learners based on the weighted number of
+    completed units, if the learner has completed a number of units greater or equal
+    to the number of completed units required to get a grade, they will get a grade of
+    1, otherwise the grade will be the number of completed units divided by the number
+    of completed units required to get a grade configured in the component. The grade is
+    rounded to the nearest integer.
 - **Maximum Attempts**: grades learners based on the weighted number of completed units,
   if the learner has completed a number of units greater or equal to the number of
   completed units required to get a grade, they will get a grade of 1, otherwise the grade
