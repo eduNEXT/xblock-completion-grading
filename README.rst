@@ -1,151 +1,204 @@
-Completion Grading XBlock for Open edX
-######################################
+Completion Grading XBlock
+#########################
 
-Testing with Docker
-********************
+|status-badge| |license-badge| |ci-badge|
 
-This XBlock comes with a Docker test environment ready to build, based on the xblock-sdk workbench. To build and run it::
+Purpose
+*******
 
-    $ make dev.run
+Allows course authors to create a gradable component that will assign a
+grade to students based on their level of units completion.
+The instructor will be able to choose between different grading methods
+and configure each of them.
 
-The XBlock SDK Workbench, including this XBlock, will be available on the list of XBlocks at http://localhost:8000
+This XBlock has been created as an open source contribution to the Open
+edX platform and has been funded by **Unidigital** project from the Spanish
+Government - 2023.
 
-Translating
+
+Enabling the XBlock in a course
+*******************************
+
+Once the XBlock has been installed in your Open edX installation, you can
+enable it in a course from Studio through the **Advanced Settings**.
+
+1. Go to Studio and open the course to which you want to add the XBlock.
+2. Go to **Settings** > **Advanced Settings** from the top menu.
+3. Search for **Advanced Module List** and add ``"completion_grading"``
+   to the list.
+4. Click **Save Changes** button.
+
+
+Adding a Completion Grading Component to a course unit
+*********************************************************
+
+From Studio, you can add the Completion Grading Component to a course unit.
+
+1. Click on the **Advanced** button in **Add New Component**.
+
+   .. image:: https://github.com/eduNEXT/xblock-completion-grading/assets/64440265/534581c8-2120-46c1-942a-d609f8986118
+      :alt: Open Advanced Components
+
+2. Select **Completion Grading** from the list.
+
+   .. image:: https://github.com/eduNEXT/xblock-completion-grading/assets/64440265/ed3d57d2-496f-4b78-90a2-c4d9df524241
+      :alt: Select Completion Grading Component
+
+3. Configure the component as needed.
+
+
+View from the Learning Management System (CMS)
+**********************************************
+
+The **Completion Grading** component has a set of settings that can be
+configured by the course author.
+
+.. image:: https://github.com/eduNEXT/xblock-completion-grading/assets/64440265/66663034-a9f5-4119-81ca-ba5875ffebd0
+    :alt: Settings for the Completion Grading component
+
+The **Completion Grading** component has the following settings:
+
+- **Grading Method**: Allow the course author to choose between different
+  grading methods. The available options are:
+  - **Minimum Completion**: grades learners based on the minimum number of
+    completed units, if the learner has completed the minimum number of units,
+    they will get a grade of 1, otherwise 0.
+  - **Weighted Completion**: grades learners based on the weighted number of
+    completed units, if the learner has completed a number of units greater or equal
+    to the number of completed units required to get a grade, they will get a grade of
+    1, otherwise the grade will be the number of completed units divided by the number
+    of completed units required to get a grade configured in the component. The grade is
+    rounded to the nearest integer.
+- **Maximum Attempts**: grades learners based on the weighted number of completed units,
+  if the learner has completed a number of units greater or equal to the number of
+  completed units required to get a grade, they will get a grade of 1, otherwise the grade
+  will be the number of completed units divided by the number of completed units required
+  to get a grade configured in the component.
+- **Number of Completed Units**: Allows the course author to set the number of
+  number of units that need to be completed to get maximum grade.
+- **Problem Weight**: Allows the course author to set the weight of the
+  completion grading component in the final grade of the course.
+- **Instructions Text**: Allows the course author to set the instructions that
+  will be displayed to the learner.
+- **Button Text**: Allows the course author to set the text that will be
+  displayed on the button that the learner will use to calculate the grade.
+
+
+View from the Learning Management System (LMS)
+**********************************************
+
+When a learner accesses the course, they will see the instructions and the
+button to calculate the grade. If the course author has set the maximum
+number of attempts, the learner will see the number of attempts left. After
+the learner has calculated the grade, they will see the grade obtained.
+
+.. image:: https://github.com/eduNEXT/xblock-completion-grading/assets/64440265/f0513817-648c-4560-bda3-5f7128b2ce0b
+    :alt: View of the component in the LMS
+
+When the learner presses the button, the grade will be calculated asynchronously based on the
+selected grading method and the number of completed units. The learner must keep pressing the
+button until the grade is calculated. The grade will be displayed to the learner once it is
+calculated.
+
+Experimenting with this XBlock in the Workbench
+************************************************
+
+`XBlock`_ is the Open edX component architecture for building custom learning
+interactive components.
+
+You can see the Completion Grading component in action in the XBlock
+Workbench. Running the Workbench requires having docker running.
+
+.. code::
+
+    git clone git@github.com:eduNEXT/xblock-completion-grading
+    virtualenv venv/
+    source venv/bin/activate
+    cd xblock-completion-grading
+    make upgrade
+    make install
+    make dev.run
+
+Once the process is done, you can interact with the Completion Grading
+XBlock in the Workbench by navigating to http://localhost:8000
+
+For details regarding how to deploy this or any other XBlock in the Open edX
+platform, see the `installing-the-xblock`_ documentation.
+
+.. _XBlock: https://openedx.org/r/xblock
+.. _installing-the-xblock: https://edx.readthedocs.io/projects/xblock-tutorial/en/latest/edx_platform/devstack.html#installing-the-xblock
+
+Getting Help
 *************
 
-Internationalization (i18n) is when a program is made aware of multiple languages.
-Localization (l10n) is adapting a program to local language and cultural habits.
+If you're having trouble, the Open edX community has active completion forums
+available at https://discuss.openedx.org where you can connect with others in
+the community.
 
-Use the locale directory to provide internationalized strings for your XBlock project.
-For more information on how to enable translations, visit the
-`Open edX XBlock tutorial on Internationalization <https://edx.readthedocs.org/projects/xblock-tutorial/en/latest/edx_platform/edx_lms.html>`_.
+Also, real-time conversations are always happening on the Open edX community
+Slack channel. You can request a `Slack invitation`_, then join the
+`community Slack workspace`_.
 
-This cookiecutter template uses `django-statici18n <https://django-statici18n.readthedocs.io/en/latest/>`_
-to provide translations to static javascript using ``gettext``.
+For anything non-trivial, the best path is to open an `issue`_ in this
+repository with as many details about the issue you are facing as you can
+provide.
 
-The included Makefile contains targets for extracting, compiling and validating translatable strings.
-The general steps to provide multilingual messages for a Python program (or an XBlock) are:
+For more information about these options, see the `Getting Help`_ page.
 
-1. Mark translatable strings.
-2. Run i18n tools to create raw message catalogs.
-3. Create language specific translations for each message in the catalogs.
-4. Use ``gettext`` to translate strings.
-
-1. Mark translatable strings
-=============================
-
-Mark translatable strings in python::
+.. _Slack invitation: https://openedx.org/slack
+.. _community Slack workspace: https://openedx.slack.com/
+.. _issue: https://github.com/eduNEXT/xblock-completion-grading/issues
+.. _Getting Help: https://openedx.org/getting-help
 
 
-    from django.utils.translation import ugettext as _
+License
+*******
 
-    # Translators: This comment will appear in the `.po` file.
-    message = _("This will be marked.")
+The code in this repository is licensed under the AGPL-3.0 unless otherwise
+noted.
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#python-source-code>`__
-for more information.
-
-You can also use ``gettext`` to mark strings in javascript::
+Please see `LICENSE.txt <LICENSE.txt>`_ for details.
 
 
-    // Translators: This comment will appear in the `.po` file.
-    var message = gettext("Custom message.");
+Contributing
+************
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#javascript-files>`__
-for more information.
+Contributions are very welcome.
 
-2. Run i18n tools to create Raw message catalogs
-=================================================
-
-This cookiecutter template offers multiple make targets which are shortcuts to
-use `edx-i18n-tools <https://github.com/openedx/i18n-tools>`_.
-
-After marking strings as translatable we have to create the raw message catalogs.
-These catalogs are created in ``.po`` files. For more information see
-`GNU PO file documentation <https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html>`_.
-These catalogs can be created by running::
+This project is currently accepting all types of contributions, bug fixes,
+security fixes, maintenance work, or new features.  However, please make sure
+to have a completion about your new feature idea with the maintainers prior to
+beginning development to maximize the chances of your change being accepted.
+You can start a conversation by creating a new issue on this repo summarizing
+your idea.
 
 
-    $ make extract_translations
+Translations
+============
 
-The previous command will create the necessary ``.po`` files under
-``xblock-completion-grading/completion_grading/conf/locale/en/LC_MESSAGES/text.po``.
-The ``text.po`` file is created from the ``django-partial.po`` file created by
-``django-admin makemessages`` (`makemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#message-files>`_),
-this is why you will not see a ``django-partial.po`` file.
+This Xblock is initially available in English and Spanish. You can help by
+translating this component to other languages. Follow the steps below:
 
-3. Create language specific translations
-==============================================
+1. Create a folder for the translations in ``locale/``, eg:
+   ``locale/fr_FR/LC_MESSAGES/``, and create your ``text.po``
+   file with all the translations.
+2. Run ``make compile_translations``, this will generate the ``.mo`` file.
+3. Create a pull request with your changes.
 
-3.1 Add translated strings
----------------------------
 
-After creating the raw message catalogs, all translations should be filled out by the translator.
-One or more translators must edit the entries created in the message catalog, i.e. the ``.po`` file(s).
-The format of each entry is as follows::
+Reporting Security Issues
+*************************
 
-    #  translator-comments
-    A. extracted-comments
-    #: reference…
-    #, flag…
-    #| msgid previous-untranslated-string
-    msgid 'untranslated message'
-    msgstr 'mensaje traducido (translated message)'
+Please do not report a potential security issue in public. Please email
+security@edunext.co.
 
-For more information see
-`GNU PO file documentation <https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html>`_.
 
-To use translations from transifex use the follow Make target to pull translations::
+.. |ci-badge| image:: https://github.com/eduNEXT/xblock-completion-grading/actions/workflows/ci.yml/badge.svg?branch=main
+    :target: https://github.com/eduNEXT/xblock-completion-grading/actions
+    :alt: CI
 
-    $ make pull_translations
+.. |license-badge| image:: https://img.shields.io/github/license/eduNEXT/xblock-completion-grading.svg
+    :target: https://github.com/eduNEXT/xblock-completion-grading/blob/main/LICENSE.txt
+    :alt: License
 
-See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
-transifex credentials.
-
-See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transiflex.
-
-3.2 Compile translations
--------------------------
-
-Once translations are in place, use the following Make target to compile the translation catalogs ``.po`` into
-``.mo`` message files::
-
-    $ make compile_translations
-
-The previous command will compile ``.po`` files using
-``django-admin compilemessages`` (`compilemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#compiling-message-files>`_).
-After compiling the ``.po`` file(s), ``django-statici18n`` is used to create language specific catalogs. See
-``django-statici18n`` `documentation <https://django-statici18n.readthedocs.io/en/latest/>`_ for more information.
-
-To upload translations to transiflex use the follow Make target::
-
-    $ make push_translations
-
-See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
-transifex credentials.
-
-See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transiflex.
-
- **Note:** The ``dev.run`` make target will automatically compile any translations.
-
- **Note:** To check if the source translation files (``.po``) are up-to-date run::
-
-     $ make detect_changed_source_translations
-
-4. Use ``gettext`` to translate strings
-========================================
-
-Django will automatically use ``gettext`` and the compiled translations to translate strings.
-
-Troubleshooting
-****************
-
-If there are any errors compiling ``.po`` files run the following command to validate your ``.po`` files::
-
-    $ make validate
-
-See `django's i18n troubleshooting documentation
-<https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#troubleshooting-gettext-incorrectly-detects-python-format-in-strings-with-percent-signs>`_
-for more information.
+.. |status-badge| image:: https://img.shields.io/badge/Status-Maintained-brightgreen
