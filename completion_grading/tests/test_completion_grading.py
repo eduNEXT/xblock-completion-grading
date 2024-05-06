@@ -246,7 +246,7 @@ class TestXBlockCompletionGrading(TestCase):
         ]
         mock_get_course_sequences.return_value = mock_verticals
         mock_init_completion_service.return_value = Mock(
-            vertical_is_complete=Mock(side_effect=(lambda unit: unit.completed)),
+            vertical_is_complete=Mock(side_effect=lambda unit: unit.completed),
         )
 
         completed_units = get_user_completions_by_verticals(
